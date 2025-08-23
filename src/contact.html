@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Plan Your India Trip | Tourism Guide</title>
+    <meta name="description" content="Contact Incredible India Tourism Guide to plan your perfect Indian adventure. Get expert travel advice, customized itineraries, and 24/7 support for your India trip.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-content">
+                <div class="nav-logo">
+                    <h2><a href="index.html" style="text-decoration: none; color: inherit;">Incredible India</a></h2>
+                </div>
+
+                <div class="nav-menu" id="nav-menu">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="destinations.html" class="nav-link">Destinations</a>
+                    <a href="about.html" class="nav-link">About India</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </div>
+
+                <div class="nav-cta">
+                    <button class="btn btn-nav">Plan Trip</button>
+                </div>
+
+                <div class="nav-toggle" id="nav-toggle">
+                    <span class="nav-toggle-bar"></span>
+                    <span class="nav-toggle-bar"></span>
+                    <span class="nav-toggle-bar"></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" style="min-height: 60vh;">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title" style="font-size: clamp(2.5rem, 6vw, 5rem);">
+                <span class="hero-title-gradient">Contact Us</span>
+            </h1>
+            <p class="hero-description">
+                Ready to explore the incredible diversity of India? Let us help you plan 
+                the perfect journey tailored to your interests and preferences.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <h3>Email Us</h3>
+                        <p>info@incredibleindia.com</p>
+                        <p>support@incredibleindia.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <h3>Call Us</h3>
+                        <p>+91 1800-111-363</p>
+                        <p>+91 11-2332-0005</p>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">🕒</div>
+                        <h3>Support Hours</h3>
+                        <p>24/7 Travel Assistance</p>
+                        <p>Emergency Support Available</p>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div style="margin-top: 48px;">
+                    <h3 style="text-align: center; margin-bottom: 32px; color: var(--earth-brown);">Send Us a Message</h3>
+                    <form id="contact-form" style="max-width: 600px; margin: 0 auto;">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+                            <div>
+                                <label for="name" style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--earth-brown);">Name *</label>
+                                <input type="text" id="name" name="name" required 
+                                    style="width: 100%; padding: 12px; border: 2px solid var(--border-color); border-radius: 8px; font-size: 16px;">
+                            </div>
+                            <div>
+                                <label for="email" style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--earth-brown);">Email *</label>
+                                <input type="email" id="email" name="email" required 
+                                    style="width: 100%; padding: 12px; border: 2px solid var(--border-color); border-radius: 8px; font-size: 16px;">
+                            </div>
+                        </div>
+                        
+                        <div style="margin-bottom: 16px;">
+                            <label for="phone" style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--earth-brown);">Phone</label>
+                            <input type="tel" id="phone" name="phone" 
+                                style="width: 100%; padding: 12px; border: 2px solid var(--border-color); border-radius: 8px; font-size: 16px;">
+                        </div>
+                        
+                        <div style="margin-bottom: 16px;">
+                            <label for="destination" style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--earth-brown);">Interested Destination</label>
+                            <select id="destination" name="destination" 
+                                style="width: 100%; padding: 12px; border: 2px solid var(--border-color); border-radius: 8px; font-size: 16px;">
+                                <option value="">Select a destination</option>
+                                <option value="rajasthan">Rajasthan</option>
+                                <option value="goa">Goa</option>
+                                <option value="kerala">Kerala</option>
+                                <option value="agra">Agra</option>
+                                <option value="himachal">Himachal Pradesh</option>
+                                <option value="tamil-nadu">Tamil Nadu</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div style="margin-bottom: 24px;">
+                            <label for="message" style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--earth-brown);">Message *</label>
+                            <textarea id="message" name="message" rows="5" required 
+                                style="width: 100%; padding: 12px; border: 2px solid var(--border-color); border-radius: 8px; font-size: 16px; resize: vertical;"
+                                placeholder="Tell us about your travel plans, preferences, and any questions you have..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-hero" style="width: 100%;">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="contact-cta" style="margin-top: 48px;">
+                    <p>Join thousands of travelers who have discovered the magic of India with us</p>
+                    <p style="margin-top: 16px; color: var(--muted-text);">
+                        We typically respond within 2-4 hours during business hours
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Info Section -->
+    <section style="padding: 60px 0; background: var(--warm-white);">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why Choose Us?</h2>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">🎯</div>
+                    <h4>Customized Itineraries</h4>
+                    <p>Tailored travel plans based on your interests, budget, and time constraints.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🏆</div>
+                    <h4>Expert Local Guides</h4>
+                    <p>Experienced guides who know the hidden gems and best local experiences.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🛡️</div>
+                    <h4>24/7 Support</h4>
+                    <p>Round-the-clock assistance to ensure your trip goes smoothly.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">💎</div>
+                    <h4>Best Value</h4>
+                    <p>Competitive pricing with no hidden costs and best value for money.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🌟</div>
+                    <h4>Quality Accommodations</h4>
+                    <p>Carefully selected hotels and accommodations for comfort and authenticity.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🚗</div>
+                    <h4>Safe Transportation</h4>
+                    <p>Reliable and safe transportation options for all your travel needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <h3 class="footer-title">Incredible India</h3>
+                <p class="footer-description">Your gateway to discovering the wonders of India</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="index.html">Home</a>
+                </div>
+                <p class="footer-copyright">© 2025 Incredible India Tourism Guide. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Contact form submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simple form validation
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            if (!name || !email || !message) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+            
+            // Simulate form submission
+            alert('Thank you for your message! We will get back to you within 2-4 hours.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
