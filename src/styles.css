@@ -12,6 +12,11 @@ body {
     background-color: #fef9f0;
 }
 
+.btn-nav a{
+    text-decoration: none;
+    color: white;
+}
+
 /* Design System Colors */
 :root {
     --saffron: #ff9500;
@@ -622,7 +627,6 @@ section {
     .features-grid {
         grid-template-columns: 1fr;
     }
-
     .contact-grid {
         grid-template-columns: 1fr;
     }
