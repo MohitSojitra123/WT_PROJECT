@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Travel Quiz</title>
+  <link rel="stylesheet" href="styles.css">
   <style>
     body {
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -113,58 +114,203 @@
 </head>
 <body>
 
+     <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-content">
+                <div class="nav-logo">
+                    <h2><a href="index.html" style="text-decoration: none; color: inherit;">Incredible India</a></h2>
+                </div>
+
+                <div class="nav-menu" id="nav-menu">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="destinations.html" class="nav-link">Destinations</a>
+                    <a href="about.html" class="nav-link">About India</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </div>
+
+
+                <div class="nav-toggle" id="nav-toggle">
+                    <span class="nav-toggle-bar"></span>
+                    <span class="nav-toggle-bar"></span>
+                    <span class="nav-toggle-bar"></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
   <div class="quiz-container">
     <h1>Travel Quiz</h1>
 
-    <!-- Question 1 -->
-    <div class="question">
+ <div class="question">
       <h2>What is your budget range for the trip?</h2>
       <div class="options">
         <div class="option-box">
-          <input type="radio" id="q1a1" name="budget">
+          <input type="radio" id="q1a1" name="budget" value="₹10,000 – ₹15,000">
           <label for="q1a1">₹10,000 – ₹15,000</label>
         </div>
         <div class="option-box">
-          <input type="radio" id="q1a2" name="budget">
+          <input type="radio" id="q1a2" name="budget" value="₹15,000 – ₹25,000">
           <label for="q1a2">₹15,000 – ₹25,000</label>
         </div>
         <div class="option-box">
-          <input type="radio" id="q1a3" name="budget">
+          <input type="radio" id="q1a3" name="budget" value="₹25,000 – ₹40,000">
           <label for="q1a3">₹25,000 – ₹40,000</label>
         </div>
         <div class="option-box">
-          <input type="radio" id="q1a4" name="budget">
+          <input type="radio" id="q1a4" name="budget" value="₹40,000+">
           <label for="q1a4">₹40,000+</label>
         </div>
       </div>
     </div>
 
-    <!-- Question 2 -->
+
     <div class="question">
       <h2>Which season do you prefer for travel?</h2>
       <div class="options">
         <div class="option-box">
-          <input type="radio" id="q2a1" name="season">
+          <input type="radio" id="q2a1" name="season" value="Winter (Nov – Feb)">
           <label for="q2a1">Winter (Nov – Feb)</label>
         </div>
         <div class="option-box">
-          <input type="radio" id="q2a2" name="season">
+          <input type="radio" id="q2a2" name="season" value="Summer (Mar – Jun)">
           <label for="q2a2">Summer (Mar – Jun)</label>
         </div>
         <div class="option-box">
-          <input type="radio" id="q2a3" name="season">
+          <input type="radio" id="q2a3" name="season" value="Monsoon (Jul – Sep)">
           <label for="q2a3">Monsoon (Jul – Sep)</label>
-        </div>
-        <div class="option-box">
-          <input type="radio" id="q2a4" name="season">
-          <label for="q2a4">Any season is fine</label>
         </div>
       </div>
     </div>
 
-    <!-- Search button -->
-    <button class="btn">Search Place</button>
+    <button class="btn" id="searchBtn">Search Place</button>
   </div>
+
+
+  <div class="">
+
+
+     <!-- Destinations Section -->
+    <section class="destinations">
+        <div class="container">
+            <div class="destinations-grid">
+          
+            </div>
+
+          
+                
+<script>
+document.getElementById("searchBtn").addEventListener("click", function () {
+  const budget = document.querySelector('input[name="budget"]:checked');
+  const season = document.querySelector('input[name="season"]:checked');
+
+  if (!budget || !season) {
+    alert("⚠️ Please select both budget and season!");
+    return;
+  }
+
+  const selectedBudget = budget.value;
+  const selectedSeason = season.value;
+
+
+  const filteredPlaces = tourismData.filter(place => 
+    place.budget === selectedBudget || place.bestMonths === selectedSeason
+  );
+
+
+  displayResults(filteredPlaces);
+});
+
+const tourismData = [
+  {
+    name: "Rajasthan",
+    description: "Land of kings and majestic palaces, where every fort tells a story of valor and grandeur. Experience royal heritage, desert safaris, and vibrant culture in cities like Jaipur, Udaipur, Jodhpur, and Jaisalmer.",
+    bestMonths: "Winter (Nov – Feb)",
+    atmosphere: "Pleasant winter weather, cool nights, great for forts, deserts and festivals.",
+    budget: "₹15,000 – ₹25,000",
+    image: "https://media.istockphoto.com/id/942152278/photo/gadisar-lake-at-jaisalmer-rajasthan-at-sunrise-with-ancient-temples-and-archaeological-ruins.jpg?s=612x612&w=0&k=20&c=HvhbHZ8HH_lAjAAI2pmqL4mUipyyAwy31qp5jjKQTO0="
+  },
+  {
+    name: "Goa",
+    description: "Tropical paradise with pristine beaches, Portuguese heritage, and vibrant nightlife. Perfect blend of relaxation and adventure with beautiful coastline and rich colonial history.",
+    bestMonths: "Summer (Mar – Jun)",
+    atmosphere: "Pleasant sunny days, cool evenings; perfect for beaches and nightlife.",
+    budget: "₹10,000 – ₹20,000",
+    image: "https://media.istockphoto.com/id/535168027/photo/india-goa-palolem-beach.jpg?s=612x612&w=0&k=20&c=iGV1Ue0Efj87dQirWnUpZVG1dNobUjfVvMGdKHTJ7Qg="
+  },
+  {
+    name: "Kerala",
+    description: "Known as 'God's Own Country' — lush backwaters, palm-fringed beaches, tea hills, and rich Ayurvedic traditions. Calm, green and culturally rich.",
+    bestMonths: "Monsoon (Jul – Sep)",
+    atmosphere: "Cooler, less humid, lush greenery after monsoon; perfect for backwaters.",
+    budget: "₹18,000 – ₹28,000",
+    image: "https://cdn1.tripoto.com/media/filter/tst/img/2052077/Image/1654872215_1650865492_nature_photographer_29ezcwtmtnm_unsplash.jpg.webp"
+  },
+  {
+    name: "Ladakh",
+    description: "High-altitude desert of stark mountains, Buddhist monasteries, turquoise lakes and extreme landscapes. Adventure and serene spirituality in places like Leh and Nubra Valley.",
+    bestMonths: "Winter (Nov – Feb)",
+    atmosphere: "Clear skies, pleasant daytime, cool nights; mountain passes open.",
+    budget: "₹25,000 – ₹40,000",
+    image: "https://s7ap1.scene7.com/is/image/incredibleindia/2-lamayuru-or-yuru-monastery-kargil-j_k-city-hero?qlt=82&ts=1726667854003"
+  },
+   {
+    name: "Rajasthan",
+    description: "Land of kings and majestic palaces, where every fort tells a story of valor and grandeur. Experience royal heritage, desert safaris, and vibrant culture in cities like Jaipur, Udaipur, Jodhpur, and Jaisalmer.",
+    bestMonths: "Summer (Mar – Jun)",
+    atmosphere: "Pleasant winter weather, cool nights, great for forts, deserts and festivals.",
+    budget: "₹15,000 – ₹25,000",
+    image: "https://media.istockphoto.com/id/942152278/photo/gadisar-lake-at-jaisalmer-rajasthan-at-sunrise-with-ancient-temples-and-archaeological-ruins.jpg?s=612x612&w=0&k=20&c=HvhbHZ8HH_lAjAAI2pmqL4mUipyyAwy31qp5jjKQTO0="
+  }
+];
+
+function displayResults(places) {
+  const grid = document.querySelector(".destinations-grid");
+  grid.innerHTML = ""; 
+
+  if (places.length === 0) {
+    grid.innerHTML = "<p>No destinations match your selection. Try again!</p>";
+    return;
+  }
+
+  places.map(place => {
+    const card = `
+      <article class="destination-card">
+        <div class="card-image">
+          <img src="${place.image}" alt="${place.name}">
+          <div class="card-badge">${place.bestMonths}</div>
+        </div>
+        <div class="card-content">
+          <h3 class="card-title">${place.name}</h3>
+          <p class="card-description">${place.description}</p>
+          <div class="card-highlights">
+            <h4>Season:</h4>
+            <div class="highlights-tags">
+              <span class="tag">${place.bestMonths}</span>
+            </div>
+          </div>
+          <div class="card-highlights">
+            <h4>Budget:</h4>
+            <div class="highlights-tags">
+              <span class="tag">${place.budget}</span>
+            </div>
+          </div>
+          <button class="btn btn-destination">Explore ${place.name}</button>
+        </div>                    
+      </article>
+    `;
+    grid.innerHTML += card;
+  });
+}
+</script>
+
+              
+
+
 
 </body>
 </html>
